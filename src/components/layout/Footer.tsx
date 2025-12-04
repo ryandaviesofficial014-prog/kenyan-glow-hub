@@ -1,6 +1,7 @@
-import { Gift, Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import logoImage from "@/assets/logo-bloom-grace.png";
 
 const Footer = () => {
   return (
@@ -32,15 +33,11 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <a href="/" className="flex items-center gap-2 mb-4">
-              <Gift className="w-8 h-8 text-primary" />
-              <span className="text-xl font-display font-bold">
-                <span className="text-secondary">GIFT</span>
-                <span className="text-primary">HUB</span>
-              </span>
+            <a href="/" className="flex items-center mb-4">
+              <img src={logoImage} alt="Bloom & Grace" className="h-12 w-auto brightness-0 invert" />
             </a>
             <p className="text-sm text-background/70 mb-4">
-              Your premier gifting destination. Thoughtful gifts for every occasion, delivered with love.
+              Where every gift tells a story. Luxury flowers and thoughtful gifts, delivered with love.
             </p>
             <div className="flex gap-3">
               <a href="#" className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
@@ -104,7 +101,7 @@ const Footer = () => {
       <div className="border-t border-background/10">
         <div className="container py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-background/60">
-            <p>© 2024 GiftHub. All rights reserved.</p>
+            <p>© 2024 Bloom & Grace. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>

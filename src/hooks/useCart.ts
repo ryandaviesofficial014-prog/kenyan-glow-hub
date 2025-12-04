@@ -74,7 +74,7 @@ export const useCart = create<CartStore>()(
       },
     }),
     {
-      name: "gifthub-cart",
+      name: "bloom-grace-cart",
     }
   )
 );

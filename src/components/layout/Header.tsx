@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import logoImage from "@/assets/logo-bloom-grace.png";
 import { Search, User, ShoppingCart, Gift, Menu, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -84,17 +85,12 @@ const Header = () => {
           </Sheet>
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 shrink-0">
-            <div className="relative">
-              <Gift className="w-10 h-10 text-primary" />
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-destructive rounded-full flex items-center justify-center">
-                <span className="text-[8px] text-destructive-foreground">🎅</span>
-              </div>
-            </div>
-            <span className="text-2xl font-display font-bold tracking-tight">
-              <span className="text-secondary">GIFT</span>
-              <span className="text-primary">HUB</span>
-            </span>
+          <Link to="/" className="flex items-center shrink-0">
+            <img 
+              src={logoImage} 
+              alt="Bloom & Grace" 
+              className="h-12 md:h-14 w-auto"
+            />
           </Link>
 
           {/* Search */}
