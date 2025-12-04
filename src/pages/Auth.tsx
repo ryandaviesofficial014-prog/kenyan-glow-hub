@@ -164,12 +164,12 @@ const Auth = () => {
         </div>
 
         {/* Auth Forms */}
-        <div className="container py-12">
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-16 max-w-4xl mx-auto">
+        <div className="container py-12 px-4">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 max-w-5xl mx-auto">
             
             {/* Login Section */}
-            <div>
-              <h2 className="text-2xl font-display font-semibold mb-6">Login</h2>
+            <div className="space-y-6">
+              <h2 className="text-2xl font-semibold text-foreground">Login</h2>
               <form onSubmit={handleLogin} className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="login-email">Email address *</Label>
@@ -220,8 +220,8 @@ const Auth = () => {
             </div>
 
             {/* Register Section */}
-            <div>
-              <h2 className="text-2xl font-display font-semibold mb-6">Register</h2>
+            <div className="space-y-6">
+              <h2 className="text-2xl font-semibold text-foreground">Register</h2>
               <form onSubmit={handleRegister} className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
