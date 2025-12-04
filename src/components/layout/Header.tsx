@@ -1,5 +1,4 @@
 import { Search, User, ShoppingCart, Gift, Menu } from "lucide-react";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -8,9 +7,10 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import Navigation from "./Navigation";
+import { useCart } from "@/hooks/useCart";
 
 const Header = () => {
-  const [cartCount] = useState(0);
+  const cartCount = useCart((state) => state.getTotalItems());
 
   return (
     <header className="bg-background border-b border-border sticky top-0 z-50">

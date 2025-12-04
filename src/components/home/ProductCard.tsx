@@ -1,6 +1,9 @@
 import { Heart, ShoppingCart, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useCart } from "@/hooks/useCart";
+import { toast } from "sonner";
+import type { Product } from "@/hooks/useProducts";
 
 interface ProductCardProps {
   id: string;
@@ -15,6 +18,7 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({
+  id,
   name,
   price,
   originalPrice,
@@ -24,8 +28,34 @@ const ProductCard = ({
   isNew,
   isSale,
 }: ProductCardProps) => {
+  const { addItem } = useCart();
+
   const formatPrice = (amount: number) => {
     return `KSh${amount.toLocaleString()}.00`;
+  };
+
+  const handleAddToCart = () => {
+    const product: Product = {
+      id,
+      name,
+      price,
+      original_price: originalPrice || null,
+      image_url: image,
+      images: null,
+      has_variants: hasVariants || false,
+      is_new: isNew || false,
+      is_sale: isSale || false,
+      is_featured: false,
+      is_active: true,
+      slug: id,
+      description: null,
+      category_id: null,
+      stock_quantity: null,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+    addItem(product);
+    toast.success(`${name} added to cart`);
   };
 
   return (
@@ -73,6 +103,7 @@ const ProductCard = ({
             <Button
               size="sm"
               className="flex-1 bg-background text-foreground hover:bg-primary hover:text-primary-foreground transition-all"
+              onClick={handleAddToCart}
             >
               {hasVariants ? (
                 <>Choose options</>
