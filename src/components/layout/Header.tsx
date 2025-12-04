@@ -85,9 +85,11 @@ const Header = () => {
               Corporate Gifts
             </Link>
             
-            <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary">
-              <User className="w-5 h-5" />
-            </Button>
+            <Link to="/auth">
+              <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary">
+                <User className="w-5 h-5" />
+              </Button>
+            </Link>
             
             <Link to="/cart">
               <Button variant="ghost" size="icon" className="relative text-muted-foreground hover:text-primary">
