@@ -29,8 +29,8 @@ const Header = () => {
         <div className="flex items-center justify-between gap-4">
           {/* Mobile Menu */}
           <Sheet>
-            <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon">
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="lg:hidden">
                 <Menu className="w-5 h-5" />
               </Button>
             </SheetTrigger>
