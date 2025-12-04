@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logoImage from "@/assets/logo-bloom-grace.png";
+import logoImage from "@/assets/logo-wrapped-ready.png";
 import { Search, User, ShoppingCart, Gift, Menu, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -88,7 +88,7 @@ const Header = () => {
           <Link to="/" className="flex items-center shrink-0">
             <img 
               src={logoImage} 
-              alt="Bloom & Grace" 
+              alt="Wrapped & Ready" 
               className="h-12 md:h-14 w-auto"
             />
           </Link>

@@ -1,7 +1,7 @@
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import logoImage from "@/assets/logo-bloom-grace.png";
+import logoImage from "@/assets/logo-wrapped-ready.png";
 
 const Footer = () => {
   return (
@@ -34,10 +34,10 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <a href="/" className="flex items-center mb-4">
-              <img src={logoImage} alt="Bloom & Grace" className="h-12 w-auto brightness-0 invert" />
+              <img src={logoImage} alt="Wrapped & Ready" className="h-12 w-auto brightness-0 invert" />
             </a>
             <p className="text-sm text-background/70 mb-4">
-              Crafting meaningful connections through beautifully curated presents and exquisite floral designs since 2020.
+              Making every moment special with carefully curated gifts and stunning floral arrangements since 2020.
             </p>
             <div className="flex gap-3">
               <a href="#" className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
@@ -101,7 +101,7 @@ const Footer = () => {
       <div className="border-t border-background/10">
         <div className="container py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-background/60">
-            <p>© 2024 Bloom & Grace. All rights reserved.</p>
+            <p>© 2024 Wrapped & Ready. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
