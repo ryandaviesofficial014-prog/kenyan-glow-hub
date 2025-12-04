@@ -93,7 +93,7 @@ const Corporate = () => {
         <section className="py-16 bg-muted/50">
           <div className="container">
             <h2 className="text-3xl font-display font-bold text-center text-foreground mb-12">
-              Why Choose PURPINK Corporate?
+              Why Choose GiftHub Corporate?
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {benefits.map((benefit, index) => (
@@ -136,7 +136,7 @@ const Corporate = () => {
               <div className="bg-gradient-hero rounded-2xl p-8">
                 <div className="bg-card rounded-xl p-6 shadow-card">
                   <p className="text-lg italic text-foreground mb-4">
-                    "PURPINK has transformed how we handle employee appreciation. Their team makes ordering for 200+ staff members a breeze!"
+                    "GiftHub has transformed how we handle employee appreciation. Their team makes ordering for 200+ staff members a breeze!"
                   </p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
