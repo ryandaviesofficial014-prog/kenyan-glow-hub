@@ -91,7 +91,7 @@ const Corporate = () => {
         <section className="py-16 bg-muted/50">
           <div className="container">
             <h2 className="text-3xl font-display font-bold text-center text-foreground mb-12">
-              Why Choose Bloom & Grace Corporate?
+              Why Choose Wrapped & Ready for Business?
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {benefits.map((benefit, index) => (
@@ -134,7 +134,7 @@ const Corporate = () => {
               <div className="bg-gradient-hero rounded-2xl p-8">
                 <div className="bg-card rounded-xl p-6 shadow-card">
                   <p className="text-lg italic text-foreground mb-4">
-                    "Working with Bloom & Grace revolutionized our staff recognition program. Coordinating gifts for our 200+ team members is now completely effortless!"
+                    "Wrapped & Ready revolutionized our staff recognition program. Coordinating gifts for our 200+ team members is now completely effortless!"
                   </p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">

@@ -130,7 +130,7 @@ const Auth = () => {
     } else if (data.user) {
       toast({
         title: "Account created!",
-        description: "Welcome to Bloom & Grace! You are now logged in.",
+        description: "Welcome to Wrapped & Ready! You are now logged in.",
       });
     }
 

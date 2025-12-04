@@ -74,7 +74,7 @@ export const useCart = create<CartStore>()(
       },
     }),
     {
-      name: "bloom-grace-cart",
+      name: "wrapped-ready-cart",
     }
   )
 );
