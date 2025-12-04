@@ -131,7 +131,7 @@ const Auth = () => {
     } else if (data.user) {
       toast({
         title: "Account created!",
-        description: "Welcome to Purpink! You are now logged in.",
+        description: "Welcome to GiftHub! You are now logged in.",
       });
     }
 

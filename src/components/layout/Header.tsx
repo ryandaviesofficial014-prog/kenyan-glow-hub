@@ -92,8 +92,8 @@ const Header = () => {
               </div>
             </div>
             <span className="text-2xl font-display font-bold tracking-tight">
-              <span className="text-secondary">PUR</span>
-              <span className="text-primary">PINK</span>
+              <span className="text-secondary">GIFT</span>
+              <span className="text-primary">HUB</span>
             </span>
           </Link>
 

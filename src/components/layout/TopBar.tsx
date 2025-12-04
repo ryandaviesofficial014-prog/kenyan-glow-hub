@@ -6,11 +6,11 @@ const TopBar = () => {
       <div className="container flex items-center justify-center gap-2 text-sm">
         <span>Call Us</span>
         <a 
-          href="tel:+254709953400" 
+          href="tel:+254700000000" 
           className="font-semibold hover:underline flex items-center gap-1"
         >
           <Phone className="w-3.5 h-3.5" />
-          0709 953 400
+          0700 000 000
         </a>
       </div>
     </div>

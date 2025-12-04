@@ -35,12 +35,12 @@ const Footer = () => {
             <a href="/" className="flex items-center gap-2 mb-4">
               <Gift className="w-8 h-8 text-primary" />
               <span className="text-xl font-display font-bold">
-                <span className="text-secondary">PUR</span>
-                <span className="text-primary">PINK</span>
+                <span className="text-secondary">GIFT</span>
+                <span className="text-primary">HUB</span>
               </span>
             </a>
             <p className="text-sm text-background/70 mb-4">
-              Kenya's premier gifting destination. Thoughtful gifts for every occasion, delivered with love.
+              Your premier gifting destination. Thoughtful gifts for every occasion, delivered with love.
             </p>
             <div className="flex gap-3">
               <a href="#" className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">
@@ -85,11 +85,11 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-background/70">
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-0.5 text-primary" />
-                <span>0709 953 400</span>
+                <span>0700 000 000</span>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-0.5 text-primary" />
-                <span>hello@purpink.co.ke</span>
+                <span>hello@yourdomain.com</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 text-primary" />
@@ -104,7 +104,7 @@ const Footer = () => {
       <div className="border-t border-background/10">
         <div className="container py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-background/60">
-            <p>© 2024 Purpink. All rights reserved.</p>
+            <p>© 2024 GiftHub. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
