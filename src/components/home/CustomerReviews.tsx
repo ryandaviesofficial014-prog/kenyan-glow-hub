@@ -2,23 +2,23 @@ import { Star } from "lucide-react";
 
 const reviews = [
   {
-    name: "Sarah M.",
-    text: "Absolutely stunning arrangement! My mom was thrilled. Will order again!",
+    name: "Grace N.",
+    text: "The presentation was immaculate! My sister couldn't stop smiling. Highly recommend!",
     rating: 5,
   },
   {
-    name: "James K.",
-    text: "Fast delivery and the hamper exceeded expectations. Perfect for corporate gifting.",
+    name: "Peter K.",
+    text: "Reliable and professional. Perfect for our office appreciation event.",
     rating: 5,
   },
   {
-    name: "Linda W.",
-    text: "Beautiful flowers, fresh and fragrant. Made my anniversary extra special.",
+    name: "Amina H.",
+    text: "Fresh blooms that lasted over a week. Made our anniversary truly memorable.",
     rating: 5,
   },
   {
-    name: "David O.",
-    text: "Excellent service from start to finish. The packaging was impressive!",
+    name: "John M.",
+    text: "From ordering to unboxing, everything was seamless. Top-notch quality!",
     rating: 5,
   },
 ];
@@ -29,9 +29,9 @@ const CustomerReviews = () => {
       <div className="container">
         <div className="text-center mb-10">
           <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-2">
-            What Our Customers Say
+            Loved By Our Customers
           </h2>
-          <p className="text-muted-foreground">Trusted by thousands of happy customers</p>
+          <p className="text-muted-foreground">Real stories from people we've delighted</p>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

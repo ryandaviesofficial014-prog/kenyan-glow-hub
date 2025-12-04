@@ -10,9 +10,9 @@ const Footer = () => {
       <div className="border-b border-background/10">
         <div className="container py-12">
           <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-2xl font-display font-bold mb-3">Stay in the loop</h3>
+            <h3 className="text-2xl font-display font-bold mb-3">Join Our Inner Circle</h3>
             <p className="text-background/70 mb-6">
-              Subscribe for exclusive offers, new arrivals, and gifting inspiration.
+              Be first to know about seasonal collections, member-only deals, and creative gift ideas.
             </p>
             <div className="flex gap-3 max-w-md mx-auto">
               <Input
@@ -37,7 +37,7 @@ const Footer = () => {
               <img src={logoImage} alt="Bloom & Grace" className="h-12 w-auto brightness-0 invert" />
             </a>
             <p className="text-sm text-background/70 mb-4">
-              Where every gift tells a story. Luxury flowers and thoughtful gifts, delivered with love.
+              Crafting meaningful connections through beautifully curated presents and exquisite floral designs since 2020.
             </p>
             <div className="flex gap-3">
               <a href="#" className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary transition-colors">

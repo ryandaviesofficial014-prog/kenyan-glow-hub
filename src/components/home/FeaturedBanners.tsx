@@ -7,22 +7,22 @@ import bannerCorporate from "@/assets/banner-corporate.jpg";
 
 const banners = [
   {
-    title: "Thoughtful Hampers",
-    subtitle: "Curated gift collections for every occasion",
+    title: "Artisan Hampers",
+    subtitle: "Exquisitely assembled gift bundles for any celebration",
     image: bannerHampers,
     color: "from-purple-600/80 to-pink-600/80",
     href: "/category/gift-hampers",
   },
   {
-    title: "Fresh Flowers",
-    subtitle: "Same-day delivery across Nairobi",
+    title: "Floral Elegance",
+    subtitle: "Hand-crafted arrangements delivered to your doorstep today",
     image: bannerFlowers,
     color: "from-pink-600/80 to-rose-600/80",
     href: "/category/flowers",
   },
   {
-    title: "Corporate Gifts",
-    subtitle: "Impress clients & reward teams",
+    title: "Business Gifting",
+    subtitle: "Delight clients and celebrate your team in style",
     image: bannerCorporate,
     color: "from-violet-600/80 to-purple-600/80",
     href: "/corporate",
