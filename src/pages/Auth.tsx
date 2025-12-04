@@ -5,8 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Gift, Loader2 } from "lucide-react";
-import TopBar from "@/components/layout/TopBar";
+import { Loader2 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -131,7 +130,7 @@ const Auth = () => {
     } else if (data.user) {
       toast({
         title: "Account created!",
-        description: "Welcome to GiftHub! You are now logged in.",
+        description: "Welcome to Bloom & Grace! You are now logged in.",
       });
     }
 
@@ -148,7 +147,6 @@ const Auth = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <TopBar />
       <Header />
       
       <main className="flex-1">

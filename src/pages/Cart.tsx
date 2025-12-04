@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import TopBar from "@/components/layout/TopBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/home/WhatsAppButton";
@@ -13,7 +12,6 @@ const Cart = () => {
   if (items.length === 0) {
     return (
       <div className="min-h-screen flex flex-col">
-        <TopBar />
         <Header />
         <main className="flex-1 bg-muted/30 flex items-center justify-center">
           <div className="text-center py-16">
@@ -36,7 +34,6 @@ const Cart = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <TopBar />
       <Header />
       <main className="flex-1 bg-muted/30">
         <div className="container py-8">
