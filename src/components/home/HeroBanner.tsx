@@ -1,15 +1,25 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import heroImage from "@/assets/hero-gift-hamper.jpg";
 
 const HeroBanner = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-hero min-h-[400px] md:min-h-[500px]">
+    <section className="relative overflow-hidden min-h-[400px] md:min-h-[500px]">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src={heroImage}
+          alt="Premium gift hampers"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-transparent" />
+      </div>
+
       {/* Decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-20 -right-20 w-64 h-64 bg-gold/20 rounded-full blur-3xl" />
         <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/4 right-1/4 w-4 h-4 bg-gold rounded-full animate-pulse-soft" />
-        <div className="absolute bottom-1/3 left-1/3 w-3 h-3 bg-primary rounded-full animate-pulse-soft" style={{ animationDelay: '0.5s' }} />
       </div>
 
       <div className="container relative z-10 py-12 md:py-20">
@@ -29,21 +39,18 @@ const HeroBanner = () => {
           </p>
           
           <div className="flex flex-wrap gap-4">
-            <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-primary-foreground px-8 py-6 text-base font-semibold rounded-full shadow-hover transition-all hover:scale-105">
-              Explore Holiday Range
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
-            <Button variant="outline" size="lg" className="px-8 py-6 text-base font-semibold rounded-full border-2 border-foreground/20 hover:border-primary hover:text-primary transition-all">
-              Shop All Gifts
-            </Button>
+            <Link to="/category/gift-hampers">
+              <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-primary-foreground px-8 py-6 text-base font-semibold rounded-full shadow-hover transition-all hover:scale-105">
+                Explore Holiday Range
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+            <Link to="/products">
+              <Button variant="outline" size="lg" className="px-8 py-6 text-base font-semibold rounded-full border-2 border-foreground/20 hover:border-primary hover:text-primary transition-all">
+                Shop All Gifts
+              </Button>
+            </Link>
           </div>
-        </div>
-      </div>
-
-      {/* Gift hamper image placeholder */}
-      <div className="absolute right-0 bottom-0 w-1/2 h-full hidden lg:block">
-        <div className="relative w-full h-full flex items-end justify-center">
-          <div className="w-96 h-96 bg-gradient-to-br from-gold-light/30 to-gold/20 rounded-full blur-2xl absolute" />
         </div>
       </div>
     </section>

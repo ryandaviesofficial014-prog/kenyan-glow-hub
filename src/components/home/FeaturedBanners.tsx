@@ -1,27 +1,31 @@
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import bannerHampers from "@/assets/banner-hampers.jpg";
+import bannerFlowers from "@/assets/banner-flowers.jpg";
+import bannerCorporate from "@/assets/banner-corporate.jpg";
 
 const banners = [
   {
     title: "Thoughtful Hampers",
     subtitle: "Curated gift collections for every occasion",
-    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800",
+    image: bannerHampers,
     color: "from-purple-600/80 to-pink-600/80",
-    href: "#hampers",
+    href: "/category/gift-hampers",
   },
   {
     title: "Fresh Flowers",
     subtitle: "Same-day delivery across Nairobi",
-    image: "https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=800",
+    image: bannerFlowers,
     color: "from-pink-600/80 to-rose-600/80",
-    href: "#flowers",
+    href: "/category/flowers",
   },
   {
     title: "Corporate Gifts",
     subtitle: "Impress clients & reward teams",
-    image: "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=800",
+    image: bannerCorporate,
     color: "from-violet-600/80 to-purple-600/80",
-    href: "#corporate",
+    href: "/corporate",
   },
 ];
 
@@ -31,9 +35,9 @@ const FeaturedBanners = () => {
       <div className="container">
         <div className="grid md:grid-cols-3 gap-6">
           {banners.map((banner, index) => (
-            <a
+            <Link
               key={banner.title}
-              href={banner.href}
+              to={banner.href}
               className="group relative overflow-hidden rounded-2xl aspect-[4/3] animate-slide-up opacity-0"
               style={{ animationDelay: `${index * 150}ms`, animationFillMode: 'forwards' }}
             >
@@ -55,7 +59,7 @@ const FeaturedBanners = () => {
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
