@@ -12,23 +12,23 @@ import bannerCorporate from "@/assets/banner-corporate.jpg";
 const benefits = [
   {
     icon: Building2,
-    title: "Bulk Orders",
-    description: "Special pricing for large corporate orders with volume discounts",
+    title: "Volume Pricing",
+    description: "Enjoy significant savings on large quantity orders with our tiered pricing structure",
   },
   {
     icon: Users,
-    title: "Employee Gifting",
-    description: "Reward your team with thoughtful gifts for milestones and celebrations",
+    title: "Team Recognition",
+    description: "Celebrate achievements and milestones with memorable gifts your staff will treasure",
   },
   {
     icon: Gift,
-    title: "Custom Branding",
-    description: "Add your company logo and personalized messages to gifts",
+    title: "Brand Personalization",
+    description: "Incorporate your corporate identity and heartfelt messages into every package",
   },
   {
     icon: Award,
-    title: "Client Appreciation",
-    description: "Strengthen relationships with premium gifts for valued clients",
+    title: "Partner Relations",
+    description: "Nurture valuable business connections with sophisticated, curated presents",
   },
 ];
 
@@ -65,10 +65,10 @@ const Corporate = () => {
           <div className="container relative z-10 py-16 md:py-24">
             <div className="max-w-xl">
               <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6 leading-tight">
-                Corporate <span className="text-gradient">Gifting Solutions</span>
+                Business <span className="text-gradient">Gifting Excellence</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8">
-                Elevate your business relationships with premium curated gifts. From employee recognition to client appreciation, we make corporate gifting effortless.
+                Strengthen professional bonds with sophisticated, handpicked presents. Whether celebrating milestones or thanking valued partners, we simplify the art of corporate generosity.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="#inquiry">
@@ -117,10 +117,10 @@ const Corporate = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-display font-bold text-foreground mb-6">
-                  Everything You Need for Corporate Gifting
+                  Your Complete Business Gifting Partner
                 </h2>
                 <p className="text-muted-foreground mb-8">
-                  We understand the unique needs of businesses. Our corporate gifting program is designed to make bulk ordering seamless while maintaining the personal touch that makes gifting special.
+                  We recognize that every organization has distinct requirements. Our tailored approach ensures effortless large-scale orders without sacrificing the thoughtful details that make each gift special.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   {features.map((feature) => (
@@ -134,15 +134,15 @@ const Corporate = () => {
               <div className="bg-gradient-hero rounded-2xl p-8">
                 <div className="bg-card rounded-xl p-6 shadow-card">
                   <p className="text-lg italic text-foreground mb-4">
-                    "Bloom & Grace has transformed how we handle employee appreciation. Their team makes ordering for 200+ staff members a breeze!"
+                    "Working with Bloom & Grace revolutionized our staff recognition program. Coordinating gifts for our 200+ team members is now completely effortless!"
                   </p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-                      <span className="font-bold text-primary">JK</span>
+                      <span className="font-bold text-primary">MW</span>
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground">Jane Kamau</p>
-                      <p className="text-sm text-muted-foreground">HR Director, Tech Corp</p>
+                      <p className="font-semibold text-foreground">Mary Wanjiku</p>
+                      <p className="text-sm text-muted-foreground">People & Culture Lead, Innovate Labs</p>
                     </div>
                   </div>
                 </div>
@@ -156,10 +156,10 @@ const Corporate = () => {
           <div className="container">
             <div className="max-w-2xl mx-auto">
               <h2 className="text-3xl font-display font-bold text-center text-foreground mb-4">
-                Get a Custom Quote
+                Request Your Personalized Proposal
               </h2>
               <p className="text-center text-muted-foreground mb-8">
-                Tell us about your corporate gifting needs and we'll create a tailored solution for you.
+                Share your business gifting vision and our specialists will craft a bespoke plan just for you.
               </p>
               <form onSubmit={handleSubmit} className="bg-card rounded-xl p-8 shadow-card space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">

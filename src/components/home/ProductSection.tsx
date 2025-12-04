@@ -41,7 +41,7 @@ const ProductSection = () => {
     <section className="py-12 md:py-16 bg-background">
       <div className="container">
         <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-8">
-          Top Gift Ideas
+          Curated Selections
         </h2>
 
         {/* Tabs */}

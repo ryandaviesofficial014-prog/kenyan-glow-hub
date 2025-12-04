@@ -3,23 +3,23 @@ import { Truck, Shield, RefreshCw, HeadphonesIcon } from "lucide-react";
 const features = [
   {
     icon: Truck,
-    title: "Same Day Delivery",
-    description: "Order before 2PM for same-day delivery in Nairobi",
+    title: "Swift Doorstep Delivery",
+    description: "Place your order by noon and receive it the very same day within Nairobi",
   },
   {
     icon: Shield,
-    title: "Quality Guaranteed",
-    description: "Handpicked products with freshness guarantee",
+    title: "Premium Selection Promise",
+    description: "Every item is carefully inspected to ensure exceptional quality",
   },
   {
     icon: RefreshCw,
-    title: "Easy Returns",
-    description: "Hassle-free returns within 7 days",
+    title: "Stress-Free Exchanges",
+    description: "Not satisfied? Return or exchange within a week, no questions asked",
   },
   {
     icon: HeadphonesIcon,
-    title: "24/7 Support",
-    description: "We're here to help anytime you need us",
+    title: "Always Here For You",
+    description: "Our dedicated team is available around the clock to assist",
   },
 ];
 

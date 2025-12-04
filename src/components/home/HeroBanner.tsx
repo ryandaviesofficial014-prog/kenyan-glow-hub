@@ -26,28 +26,28 @@ const HeroBanner = () => {
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 mb-4">
             <Sparkles className="w-5 h-5 text-gold" />
-            <span className="text-sm font-medium text-foreground/70">Holiday Season Sale</span>
+            <span className="text-sm font-medium text-foreground/70">Festive Collection Now Live</span>
           </div>
           
           <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-6 leading-tight">
-            Send Joy with{" "}
-            <span className="text-gradient">Perfect Gifts</span>
+            Craft Unforgettable{" "}
+            <span className="text-gradient">Moments</span>
           </h1>
           
           <p className="text-lg md:text-xl text-foreground/70 mb-8 max-w-lg">
-            Discover curated hampers, fresh flowers, and thoughtful gifts for every occasion. Same-day delivery across Kenya.
+            Hand-selected arrangements, artisan hampers, and meaningful presents for life's celebrations. Express delivery throughout Kenya.
           </p>
           
           <div className="flex flex-wrap gap-4">
             <Link to="/category/gift-hampers">
               <Button size="lg" className="bg-gradient-primary hover:opacity-90 text-primary-foreground px-8 py-6 text-base font-semibold rounded-full shadow-hover transition-all hover:scale-105">
-                Explore Holiday Range
+                Browse Festive Picks
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
             <Link to="/products">
               <Button variant="outline" size="lg" className="px-8 py-6 text-base font-semibold rounded-full border-2 border-foreground/20 hover:border-primary hover:text-primary transition-all">
-                Shop All Gifts
+                View Full Collection
               </Button>
             </Link>
           </div>
