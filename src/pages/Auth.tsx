@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -7,31 +7,77 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
-import { Gift, Mail, Lock, User, ArrowLeft } from "lucide-react";
+import { Gift, Mail, Lock, User, ArrowLeft, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Auth = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [isCheckingAuth, setIsCheckingAuth] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [activeTab, setActiveTab] = useState("signin");
   const navigate = useNavigate();
   const { toast } = useToast();
+
+  useEffect(() => {
+    // Listen for auth state changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        if (session?.user) {
+          navigate("/");
+        }
+        setIsCheckingAuth(false);
+      }
+    );
+
+    // Check existing session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session?.user) {
+        navigate("/");
+      }
+      setIsCheckingAuth(false);
+    });
+
+    return () => subscription.unsubscribe();
+  }, [navigate]);
+
+  const getErrorMessage = (error: { message: string }) => {
+    const message = error.message.toLowerCase();
+    
+    if (message.includes("invalid login credentials")) {
+      return "Invalid email or password. Please check your credentials and try again.";
+    }
+    if (message.includes("user already registered")) {
+      return "An account with this email already exists. Please sign in instead.";
+    }
+    if (message.includes("password should be at least")) {
+      return "Password must be at least 6 characters long.";
+    }
+    if (message.includes("invalid email")) {
+      return "Please enter a valid email address.";
+    }
+    if (message.includes("email rate limit")) {
+      return "Too many attempts. Please try again later.";
+    }
+    
+    return error.message;
+  };
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
     const { error } = await supabase.auth.signInWithPassword({
-      email,
+      email: email.trim(),
       password,
     });
 
     if (error) {
       toast({
         title: "Sign in failed",
-        description: error.message,
+        description: getErrorMessage(error),
         variant: "destructive",
       });
     } else {
@@ -39,7 +85,6 @@ const Auth = () => {
         title: "Welcome back!",
         description: "You have successfully signed in.",
       });
-      navigate("/");
     }
 
     setIsLoading(false);
@@ -49,35 +94,59 @@ const Auth = () => {
     e.preventDefault();
     setIsLoading(true);
 
+    if (password.length < 6) {
+      toast({
+        title: "Password too short",
+        description: "Password must be at least 6 characters long.",
+        variant: "destructive",
+      });
+      setIsLoading(false);
+      return;
+    }
+
     const redirectUrl = `${window.location.origin}/`;
 
-    const { error } = await supabase.auth.signUp({
-      email,
+    const { data, error } = await supabase.auth.signUp({
+      email: email.trim(),
       password,
       options: {
         emailRedirectTo: redirectUrl,
         data: {
-          first_name: firstName,
-          last_name: lastName,
+          first_name: firstName.trim(),
+          last_name: lastName.trim(),
         },
       },
     });
 
     if (error) {
+      const errorMessage = getErrorMessage(error);
       toast({
         title: "Sign up failed",
-        description: error.message,
+        description: errorMessage,
         variant: "destructive",
       });
-    } else {
+      
+      // If user already exists, switch to sign in tab
+      if (error.message.toLowerCase().includes("user already registered")) {
+        setActiveTab("signin");
+      }
+    } else if (data.user) {
       toast({
         title: "Account created!",
-        description: "You can now sign in to your account.",
+        description: "Welcome to Purpink! You are now signed in.",
       });
     }
 
     setIsLoading(false);
   };
+
+  if (isCheckingAuth) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/30 flex flex-col">
@@ -103,7 +172,7 @@ const Auth = () => {
             <CardDescription>Sign in or create an account to track your orders</CardDescription>
           </CardHeader>
           <CardContent>
-            <Tabs defaultValue="signin" className="w-full">
+            <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
               <TabsList className="grid w-full grid-cols-2">
                 <TabsTrigger value="signin">Sign In</TabsTrigger>
                 <TabsTrigger value="signup">Sign Up</TabsTrigger>
@@ -123,6 +192,7 @@ const Auth = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         className="pl-10"
                         required
+                        autoComplete="email"
                       />
                     </div>
                   </div>
@@ -138,12 +208,30 @@ const Auth = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         className="pl-10"
                         required
+                        autoComplete="current-password"
                       />
                     </div>
                   </div>
                   <Button type="submit" className="w-full bg-gradient-primary" disabled={isLoading}>
-                    {isLoading ? "Signing in..." : "Sign In"}
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        Signing in...
+                      </>
+                    ) : (
+                      "Sign In"
+                    )}
                   </Button>
+                  <p className="text-center text-sm text-muted-foreground">
+                    Don't have an account?{" "}
+                    <button
+                      type="button"
+                      onClick={() => setActiveTab("signup")}
+                      className="text-primary hover:underline font-medium"
+                    >
+                      Sign up
+                    </button>
+                  </p>
                 </form>
               </TabsContent>
 
@@ -161,6 +249,7 @@ const Auth = () => {
                           value={firstName}
                           onChange={(e) => setFirstName(e.target.value)}
                           className="pl-10"
+                          autoComplete="given-name"
                         />
                       </div>
                     </div>
@@ -172,6 +261,7 @@ const Auth = () => {
                         placeholder="Doe"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
+                        autoComplete="family-name"
                       />
                     </div>
                   </div>
@@ -187,6 +277,7 @@ const Auth = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         className="pl-10"
                         required
+                        autoComplete="email"
                       />
                     </div>
                   </div>
@@ -203,13 +294,31 @@ const Auth = () => {
                         className="pl-10"
                         required
                         minLength={6}
+                        autoComplete="new-password"
                       />
                     </div>
                     <p className="text-xs text-muted-foreground">Minimum 6 characters</p>
                   </div>
                   <Button type="submit" className="w-full bg-gradient-primary" disabled={isLoading}>
-                    {isLoading ? "Creating account..." : "Create Account"}
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        Creating account...
+                      </>
+                    ) : (
+                      "Create Account"
+                    )}
                   </Button>
+                  <p className="text-center text-sm text-muted-foreground">
+                    Already have an account?{" "}
+                    <button
+                      type="button"
+                      onClick={() => setActiveTab("signin")}
+                      className="text-primary hover:underline font-medium"
+                    >
+                      Sign in
+                    </button>
+                  </p>
                 </form>
               </TabsContent>
             </Tabs>
