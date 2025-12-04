@@ -230,8 +230,8 @@ INSERT INTO public.delivery_zones (name, areas, delivery_fee, min_delivery_time,
 
 -- Insert sample pickup points
 INSERT INTO public.pickup_points (name, address, phone, opening_hours) VALUES
-('Purpink Westlands', 'Westlands Mall, Ground Floor, Shop 12', '+254712345678', 'Mon-Sat: 9AM-7PM, Sun: 10AM-5PM'),
-('Purpink Junction', 'The Junction Mall, First Floor', '+254712345679', 'Mon-Sat: 10AM-8PM, Sun: 11AM-6PM');
+('Westlands', '+254703199879', 'Mon-Sat, Sun: 10AM-5PM'),
+('Junction', 'Kayole junction', '+254703199879', 'Mon-Sat, Sun: 11AM-6PM');
 
 -- Insert sample products
 INSERT INTO public.products (name, slug, description, price, original_price, category_id, image_url, is_new, is_sale, is_featured, stock_quantity) VALUES
